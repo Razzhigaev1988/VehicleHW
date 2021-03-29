@@ -1,0 +1,148 @@
+package Class_4;
+
+public class StepanHW {
+    public static void main(String[] args) {
+        Vehicle car = new Vehicle ("Honda", "silver", 200, 5,4 );
+        car.getAllInfoCars();
+
+        System.out.println();
+
+        Vehicle truck = new Vehicle("Ford", "blue", 150, 18, 200, true  );
+        truck.getAllInfoTrucks();
+
+        System.out.println();
+
+        Bike bike = new Bike();
+        bike.model="Suzuki";
+        bike.color="red";
+        bike.speed=300;
+        bike.region="JPN";
+        bike.year=2004;
+        System.out.println(bike.model + " - model of bike");
+        System.out.println(bike.color + " - color of bike");
+        System.out.println(bike.speed + " - speed of bike(mph)");
+        System.out.println(bike.region + " - region of bike(country_code)");
+        System.out.println(bike.year + " - year of bike(build year)");
+
+        System.out.println();
+
+        Hybrid_Electrial_Car he = new Hybrid_Electrial_Car();
+        System.out.println(he.chargingTime + " - is a charging time of the Vehicle (hours)");
+        System.out.println(he.milesMaxCanGo + " - is max number of miles the Vehicle can go");
+
+
+    }
+//    Доп от меня для практики по последнему уроку: разбейте по типам и создайте соответствующие классы с конструкторами
+//    для автомобили-легковые/грузовые-сделайте минимум по два общих признака и по два уникальных для каждого типа с
+//    соответствующими конструкторами(имеющиеся признаки на выбор: марка, цвет, скорость, грузоподьемность, вместимость,
+//                                    длина.. или все что придумаете) - создайте объекты каждого вида авто и выведите их т
+//    ак чтобы при вызове разных типов авто было обозначено, легковой он или грузовой
+
+}
+
+package Class_4;
+
+public class Vehicle {
+   String model;
+   String color;
+   Integer speed;
+    Integer capacity;
+    Integer length;
+    Integer tireSize;
+    Integer horsePower;
+    boolean allWheelDrive;
+
+   Vehicle (String model1,String color1, int speed1, int capacity1, int length1) {
+       this.model=model1;
+       this.color=color1;
+       this.speed=speed1;
+       this.capacity=capacity1;
+       this.length=length1;
+       System.out.println("It's a car!");
+   }
+    Vehicle (String model1,String color1, int speed1, int tireSize1, int horsePower1, boolean allWheelDrive1) {
+        this.model=model1;
+        this.color=color1;
+        this.speed=speed1;
+        this.tireSize=tireSize1;
+        this.horsePower=horsePower1;
+        this.allWheelDrive=allWheelDrive1;
+        System.out.println("It's a truck!");
+    }
+
+   String getCarModel () {
+
+       return this.model ;
+
+   }
+    String getCarColor () {
+
+        return this.color;
+    }
+    Integer getSpeed () {
+
+        return this.speed;
+    }
+    Integer getCapacity () {
+
+        return this.capacity;
+    }
+    Integer getLength () {
+
+        return this.length;
+    }
+    Integer getTireSize () {
+       return this.tireSize;
+    }
+    Integer getHorsePower () {
+        return this.horsePower;
+    }
+    boolean getallWheelDrive (){
+        return this.allWheelDrive;
+    }
+     void getAllInfoCars() {
+        System.out.println(getCarModel () + " - is a model of the Vehivle");
+        System.out.println(getCarColor () + " - is a model of the Vehivle");
+        System.out.println(getSpeed () + " - is a max speed of the Vehivle");
+         System.out.println(getCapacity () + " - is a max capacity of the Vehivle");
+         System.out.println(getLength () + " - is a length of the Vehivle");
+    }
+    void getAllInfoTrucks() {
+        System.out.println(getCarModel () + " - is a model of the Vehivle");
+        System.out.println(getCarColor () + " - is a model of the Vehivle");
+        System.out.println(getSpeed () + " - is a max speed of the Vehivle");
+        System.out.println(getTireSize () + " - is a tireSize of the Vehivle");
+        System.out.println(getHorsePower () + " - is a horsePower of the Vehivle");
+        System.out.println(getallWheelDrive () + " - allWheelDrive Vehivle");
+    }
+    public Vehicle (){
+
+    }
+}
+
+package Class_4;
+
+public class Bike extends Vehicle {
+    String region;
+    Integer year;
+Bike (){
+    System.out.println("It's a bike!");
+}
+
+
+
+}
+
+package Class_4;
+
+public class Hybrid_Electrial_Car extends Vehicle {
+
+    Integer chargingTime = 5;
+    Integer milesMaxCanGo=230;
+
+
+    Hybrid_Electrial_Car(){
+        System.out.println("It's a Hybrid_Electrial_Car");
+    }
+}
+
